@@ -57,7 +57,6 @@ export default function StackingDaoCard({ walletName }: StackingDaoCardProps) {
     }
 
     const { privateData } = useWalletPrivateData(walletName);
-
     if (!privateData?.stxPrivateKey || !walletData?.stxAddress) {
       Alert.alert('Error', 'Wallet data or private key not found');
       return;
@@ -117,6 +116,8 @@ export default function StackingDaoCard({ walletName }: StackingDaoCardProps) {
       Alert.alert('Insufficient Balance', 'You do not have enough stSTX');
       return;
     }
+
+    const { privateData } = useWalletPrivateData(walletName);
     if (!privateData?.stxPrivateKey || !walletData?.stxAddress) {
       Alert.alert('Error', 'Wallet data or private key not found');
       return;
@@ -128,9 +129,7 @@ export default function StackingDaoCard({ walletName }: StackingDaoCardProps) {
       const ststxFullId = `${STACKING_DAO_ADDRESS}.ststx-token`;
 
       const postConditions = [
-        Pc.principal(walletData.stxAddress)
-          .willSendEq(amountMicro)
-          .ft(ststxFullId, 'ststx'),
+        Pc.principal(walletData.stxAddress).willSendEq(amountMicro).ft(ststxFullId, 'ststx'),
       ];
 
       const txOptions = {
@@ -186,7 +185,10 @@ export default function StackingDaoCard({ walletName }: StackingDaoCardProps) {
 
       <View className="flex-row mt-2 bg-custom_background rounded-lg border border-custom_border overflow-hidden mb-4">
         <Pressable
-          onPress={() => { setIsWithdrawMode(false); setAmount(''); }}
+          onPress={() => {
+            setIsWithdrawMode(false);
+            setAmount('');
+          }}
           className={`flex-1 py-2 items-center ${!isWithdrawMode ? 'bg-custom_accent' : ''}`}
         >
           <TextWithFont customStyle={`${!isWithdrawMode ? 'text-black font-bold' : 'text-white'}`}>
@@ -194,7 +196,10 @@ export default function StackingDaoCard({ walletName }: StackingDaoCardProps) {
           </TextWithFont>
         </Pressable>
         <Pressable
-          onPress={() => { setIsWithdrawMode(true); setAmount(''); }}
+          onPress={() => {
+            setIsWithdrawMode(true);
+            setAmount('');
+          }}
           className={`flex-1 py-2 items-center ${isWithdrawMode ? 'bg-custom_accent' : ''}`}
         >
           <TextWithFont customStyle={`${isWithdrawMode ? 'text-black font-bold' : 'text-white'}`}>
@@ -231,10 +236,10 @@ export default function StackingDaoCard({ walletName }: StackingDaoCardProps) {
         <ActivityIndicator color="#FF5500" />
       ) : (
         <Button
-          text={isWithdrawMode ? "Unstake stSTX" : "Deposit STX"}
+          text={isWithdrawMode ? 'Unstake stSTX' : 'Deposit STX'}
           onPress={isWithdrawMode ? handleUnstake : handleStake}
           accent
-          iconName={isWithdrawMode ? "RefreshCw" : "DatabaseIcon"}
+          iconName={isWithdrawMode ? 'RefreshCw' : 'DatabaseIcon'}
         />
       )}
 
