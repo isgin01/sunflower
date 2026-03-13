@@ -1,4 +1,7 @@
+![Static Badge](https://img.shields.io/badge/coverage-10%25-FF5500)
+
 ### Setup Instructions
+
 
 Before starting, make sure you have completed the [React Native environment setup](https://reactnative.dev/docs/set-up-your-environment).
 

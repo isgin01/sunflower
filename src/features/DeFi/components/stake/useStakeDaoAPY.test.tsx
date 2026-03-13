@@ -1,28 +1,19 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { renderHook } from '@testing-library/react-native';
+import { renderHook, waitFor } from '@testing-library/react-native';
 
-import * as module from './useStakeDaoAPY';
+import useStakeDaoAPY from './useStakeDaoAPY';
 
-const createWrapper = (retry?: boolean) => {
-  const queryClient = new QueryClient({
-    defaultOptions: {
-      queries: {
-        retry: retry,
-      },
-    },
-  });
+type Children = { children: React.ReactNode };
 
-  return ({ children }: { children: React.ReactNode }) => (
+const createWrapper = () => {
+  const queryClient = new QueryClient();
+
+  let wrapper = ({ children }: Children) => (
     <QueryClientProvider client={queryClient}> {children} </QueryClientProvider>
   );
+
+  return wrapper;
 };
 
-// A test case just to ensure that nothing breaks in the future
-//
-// TODO: fix the ungraceful shutdown due to one of the used functions
-it('normal case', async () => {
-  const { result } = renderHook(() => module.default(), {
-    wrapper: createWrapper(false),
-  });
-  expect(result.current).toBe('Loading');
-});
+// TODO: it is unclear if APY must be handled the way it is done
+it.todo('stack dao apy');

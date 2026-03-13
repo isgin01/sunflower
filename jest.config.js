@@ -1,4 +1,6 @@
-module.exports = {
+/** @type {import('jest').Config} */
+
+const config = {
   preset: 'react-native',
   // Transpile these modules explicitly since they cause issues when used with jest and are
   // located in node_modules which is ignored by default by jest
@@ -7,3 +9,5 @@ module.exports = {
   ],
   setupFiles: ['./jest.setup.js'],
 };
+
+export default config;
