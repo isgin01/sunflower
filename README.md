@@ -1,4 +1,5 @@
-![Static Badge](https://img.shields.io/badge/coverage-47.57%25-blue)
+![Code Coverage Badge](https://img.shields.io/badge/coverage-47.57%25-blue)
+![Built On Stacks Badge](https://img.shields.io/badge/built_on-stacks-FC642E)
 
 ### Setup Instructions
 
