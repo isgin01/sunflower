@@ -1,22 +1,19 @@
 #!/usr/bin/env sh
 
-message="$(cat $1)"
-requiredPattern="^(feat|fix|docs|style|refactor|test|chore|revert|build|perf|ops)(\([^)]+\))?: .*$"
+input_message="$(cat $1)"
+commit_message_regex="^(feat|fix|docs|style|refactor|test|chore|revert|build|perf|ops)(\(\S+\))?: .+$"
 
-if [ "$message" = *"$requiredPattern"* ]; then
+# Use grep instead of [[ for compatibility reasons.
+# The dash shell, which is standard for Debian and Ubuntu, doesn’t support it.
+
+if ! echo "$input_message" | grep -E -q "$commit_message_regex"; then
   echo "-"
   echo "-"
+  echo "Error: the commit message didn't pass the format check."
+  echo "Expected format: <verb><optional scope><semicolon><whitespace><short headline of what changed>"
+  echo "Received message: $input_message"
+  echo "For more information consult the pre-commit script."
   echo "-"
-  echo "🚨 Wrong commit message! 😕"
-  echo "The commit message must have this format:"
-  echo "<verb><optional scope><semicolon> <short headline of what changed>"
-  echo "Allowed verbs: add, remove, update, fix, docs, style, refactor, test, chore"
-  echo "Example: feat: login button"
-  echo "-"
-  echo "Your commit message was:"
-  echo $message
-  echo "-"
-  echo "For more information, check script in .husky/commit-msg"
   echo "-"
   exit 1
 fi
