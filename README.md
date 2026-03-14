@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/coverage-10%25-FF5500)
+![Static Badge](https://img.shields.io/badge/coverage-47.57%25-blue)
 
 ### Setup Instructions
 
