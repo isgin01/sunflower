@@ -1,45 +1,29 @@
+# Sunflower Wallet
+
 ![Code Coverage Badge](https://img.shields.io/badge/coverage-47.57%25-blue)
 ![Built On Stacks Badge](https://img.shields.io/badge/built_on-stacks-FC642E)
+![License Badge](https://img.shields.io/badge/License-MIT-green)
 
-### Setup Instructions
+Sunflower is a mobile wallet designed to bring user-friendly access to Bitcoin DeFi. It is built on the [Stacks blockchain](https://www.stacks.co/) by [cape4labs team](http://cape4.tech/).
 
+## FAQ
 
-Before starting, make sure you have completed the [React Native environment setup](https://reactnative.dev/docs/set-up-your-environment).
+### How to contribute?
 
-1. Install dependencies:
+You can contribute by refactoring code, adding tests, opening an issue, etc. Any contribution will be greatly appreciated. Consult [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-   ```bash
-   npm install
-   ```
+<!--
+#### What is Stacks?
 
-2. Start the Metro bundler:
-
-   ```bash
-   npm run start
-   ```
-
-3. In a new terminal, run the app on an Android emulator **or** a connected device (ensure **Debug Mode** is enabled):
-
-   ```bash
-   npm start android
-   ```
-
-### Various useful commands
-
-- Install pre-commit hooks:
-
-   ```bash
-   npm run prepare
-   ```
-
-- Change the app's title:
-
-```bash
-npx react-native-rename "NEW APP TITLE"
-```
+Stacks is a Bitcoin layer-2 blockchain. It enables smart contracts and decentralized applications to use Bitcoin as a secure base layer.
+-->
 
 ## Our Contributors
 
 <a href="https://github.com/cape4labs/sunflower_wallet_app/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=cape4labs/sunflower_wallet_app" />
 </a>
+
+## License
+
+[MIT](./LICENSE)

@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Update code coverage
 
 on:
@@ -36,7 +33,7 @@ jobs:
           total_cov="$(jq .total.lines.pct ${{ runner.temp }}/coverage-summary.json)"
           sed -i "s/coverage-\(.*\)%/coverage-${total_cov}%/" ./README.md
 
-      - name: Commit and push changes
+      - name: Commit and push changes if README.md was changed by the previous step.
         if: contains(github.event.push.changed_files, 'README.md')
         run: |
           git config --global user.name "${{ github.actor }}"
