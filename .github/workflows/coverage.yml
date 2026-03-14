@@ -5,11 +5,14 @@ name: Update code coverage
 
 on:
   push:
-    # It is supposed to work on only dev branch
+    # Release branch doesn't need the coverage update. The update can be made only on dev branch.
     branches: ['dev']
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     defaults:
       run:
