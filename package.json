@@ -2,7 +2,9 @@
   "name": "sunflower-mono",
   "version": "1.0.0",
   "description": "A monorepository of Sunflower Wallet project.",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky"
+  },
   "keywords": [],
   "author": "cape4labs",
   "license": "MIT",
@@ -13,5 +15,8 @@
       "name": "node",
       "version": ">=22.21.1"
     }
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
   }
 }
