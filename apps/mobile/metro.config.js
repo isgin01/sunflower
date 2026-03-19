@@ -1,4 +1,4 @@
-const { getDefaultConfig } = require('@react-native/metro-config');
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const { withNativeWind } = require('nativewind/metro');
 
 /**
@@ -24,4 +24,11 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
   return context.resolveRequest(context, moduleName, platform);
 };
 
-module.exports = withNativeWind(config, { input: './global.css' });
+let pkgsPath = '../../node_modules/.pnpm/';
+
+var newCfg = mergeConfig(config, {
+  watchFolders: [pkgsPath],
+  resolver: { nodeModulesPaths: [pkgsPath] },
+});
+
+module.exports = withNativeWind(newCfg, { input: './global.css' });
