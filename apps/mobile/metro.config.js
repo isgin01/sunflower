@@ -1,5 +1,7 @@
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 const { withNativeWind } = require('nativewind/metro');
+const { FileStore } = require('metro-cache');
+const path = require('path');
 
 /**
  * Metro configuration
@@ -24,11 +26,12 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
   return context.resolveRequest(context, moduleName, platform);
 };
 
-let pkgsPath = '../../node_modules/.pnpm/';
+config.cacheStores = [
+  new FileStore({
+    root: path.join(__dirname, 'node_modules', '.cache', 'metro'),
+  }),
+];
 
-var newCfg = mergeConfig(config, {
-  watchFolders: [pkgsPath],
-  resolver: { nodeModulesPaths: [pkgsPath] },
-});
+let newCfg = mergeConfig(config, { resolver: { nodeModulesPaths: ['../../node_module'] } });
 
 module.exports = withNativeWind(newCfg, { input: './global.css' });
