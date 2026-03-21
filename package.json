@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "run:mobile": "pnpm --filter sunflowerwallet run start",
-    "build:mobile": "pnpm --filter sunflowerwallet run android",
+    "start:android": "pnpm --filter sunflower-mobile run start",
+    "build:android": "pnpm --filter sunflower-mobile run android",
     "prepare": "husky"
   },
   "keywords": [],
@@ -19,10 +19,6 @@
     }
   },
   "devDependencies": {
-    "@types/jest": "^29.5.13",
-    "babel-jest": "^30.3.0",
-    "husky": "^9.1.7",
-    "jest": "^29.6.3",
-    "jest-environment-jsdom": "^30.2.0"
+    "husky": "^9.1.7"
   }
 }

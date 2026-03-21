@@ -1,5 +1,5 @@
 {
-  "name": "sunflowerwallet",
+  "name": "sunflower-mobile",
   "version": "0.0.1",
   "private": true,
   "main": "index.js",
@@ -30,7 +30,7 @@
     "@tanstack/react-query": "^5.90.6",
     "lucide-react-native": "^0.546.0",
     "nativewind": "^4.2.1",
-    "react": "19.2.4",
+    "react": "19.2.3",
     "react-native": "^0.84.1",
     "react-native-chart-kit": "^6.12.0",
     "react-native-fast-encoder": "^0.3.1",
