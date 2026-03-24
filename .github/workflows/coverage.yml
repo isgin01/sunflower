@@ -3,7 +3,7 @@ name: Update code coverage
 on:
   push:
     # Release branch doesn't need the coverage update. The update can be made only on dev branch.
-    branches: ['dev']
+    branches: ["dev"]
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
       - run: npm i
 
       - name: Get coverage and update readme
