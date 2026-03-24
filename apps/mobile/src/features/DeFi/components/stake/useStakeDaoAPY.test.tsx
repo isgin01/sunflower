@@ -8,7 +8,7 @@ type Children = { children: React.ReactNode };
 const createWrapper = () => {
   const queryClient = new QueryClient();
 
-  let wrapper = ({ children }: Children) => (
+  const wrapper = ({ children }: Children) => (
     <QueryClientProvider client={queryClient}> {children} </QueryClientProvider>
   );
 

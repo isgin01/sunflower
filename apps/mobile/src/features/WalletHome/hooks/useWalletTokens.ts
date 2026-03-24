@@ -70,7 +70,7 @@ export default function useWalletTokens(
           rawBalance: stacksData.stx.balance,
           prices,
           historyDiff: calculatePriceDiff(priceHistory?.stx).data,
-        })
+        }),
       );
 
       // 2. Fungible Tokens (SIP-010)
@@ -81,7 +81,7 @@ export default function useWalletTokens(
             configKey: t.key,
             rawBalance: stacksData.fungible_tokens[t.key].balance,
             prices,
-          })
+          }),
         );
       }
     }
@@ -92,8 +92,8 @@ export default function useWalletTokens(
         TokenPriceUtils.createBtcData(
           btcBalance,
           prices.bitcoin?.usd ?? 0,
-          calculatePriceDiff(priceHistory?.btc).data
-        )
+          calculatePriceDiff(priceHistory?.btc).data,
+        ),
       );
     }
 

@@ -42,9 +42,7 @@ export default function SuccessScreen() {
   return (
     <Wrapper>
       <View className="flex-1">
-        <TextWithFont
-          customStyle={`text-xl md:text-3xl text-white text-center font-bold mt-5`}
-        >
+        <TextWithFont customStyle={`text-xl md:text-3xl text-white text-center font-bold mt-5`}>
           Success!
         </TextWithFont>
         <TextWithFont customStyle={`text-white text-center mt-2 text-sm md:text-base`}>

@@ -6,12 +6,12 @@ import { Alert, Animated, View } from 'react-native';
 import { RootNavigatorTypeParamListType } from '../../../navigation/types';
 import { useWalletContext } from '../../../providers/WalletContext';
 import { Button } from '../../../shared/components/Button';
-import Wrapper from '../../../shared/components/Wrapper';
 import TextWithFont from '../../../shared/components/TextWithFont';
+import Wrapper from '../../../shared/components/Wrapper';
+import { clearWallet } from '../../../shared/walletPersitance';
 import AccordionItem from '../components/AccordionItem';
 import MiniTabButton from '../components/MiniTabButton';
 import NetworkToggleRow from '../components/NetworkToggleRow';
-import { clearWallet } from '../../../shared/walletPersitance';
 
 export default function SettingsScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootNavigatorTypeParamListType>>();
@@ -76,7 +76,7 @@ export default function SettingsScreen() {
             iconName="User"
             direction="rigth"
             onToggle={() => navigation.navigate('WalletAnalyticsScreen')}
-            onLayoutHeight={() => { }}
+            onLayoutHeight={() => {}}
             animatedHeight={animatedValues.wallet}
           />
         </View>

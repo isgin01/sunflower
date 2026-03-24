@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Image, View } from 'react-native';
 

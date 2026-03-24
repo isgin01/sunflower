@@ -54,14 +54,10 @@ export default function NameWalletScreen() {
     <Wrapper>
       <View className="flex-1 flex-col w-full">
         <View className="flex-col items-center w-full px-5">
-          <TextWithFont
-            customStyle={`text-xl md:text-3xl text-white text-center font-bold mt-5`}
-          >
+          <TextWithFont customStyle={`text-xl md:text-3xl text-white text-center font-bold mt-5`}>
             Pick a name for your wallet
           </TextWithFont>
-          <TextWithFont
-            customStyle={`text-white text-center mt-2 text-sm md:text-base`}
-          >
+          <TextWithFont customStyle={`text-white text-center mt-2 text-sm md:text-base`}>
             For example: Main Wallet
           </TextWithFont>
 

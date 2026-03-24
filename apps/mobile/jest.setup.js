@@ -1,1 +1,1 @@
-jest.mock('@react-native-clipboard/clipboard', () => { });
+jest.mock('@react-native-clipboard/clipboard', () => {});

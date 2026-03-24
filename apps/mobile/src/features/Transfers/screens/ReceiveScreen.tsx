@@ -1,7 +1,7 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { ArrowLeft, ChevronDown, ChevronLeft, Copy } from 'lucide-react-native';
 import { useEffect, useRef, useState } from 'react';
-import { Animated, Dimensions, Pressable, useWindowDimensions, View } from 'react-native';
+import { Animated, Dimensions, Pressable, View, useWindowDimensions } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 
 import Coin from '../../../shared/components/Coin';

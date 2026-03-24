@@ -104,7 +104,9 @@ export default function SendScreen() {
               <TextWithFont customStyle={`text-white text-sm md:text-base`}>MAX</TextWithFont>
             </Pressable>
           </View>
-          <TextWithFont customStyle={`text-gray-400 text-sm md:text-base`}>${usdAmount}</TextWithFont>
+          <TextWithFont customStyle={`text-gray-400 text-sm md:text-base`}>
+            ${usdAmount}
+          </TextWithFont>
         </View>
 
         <View

@@ -89,7 +89,11 @@ export default function HistoryScreen() {
             const assetId = ftTransfer.asset_identifier;
             const assetName = assetId.split('::')[1] || 'FT';
             const decimals = assetId.includes('token-alex') ? 8 : 6;
-            amount = TokenPriceUtils.formatAmountAndSymbol(ftTransfer.amount || 0, assetName, decimals);
+            amount = TokenPriceUtils.formatAmountAndSymbol(
+              ftTransfer.amount || 0,
+              assetName,
+              decimals,
+            );
           } else if (tx.fee_rate && tx.sender_address === walletData?.stxAddress) {
             amount = 'Contract Call';
           }
@@ -192,8 +196,9 @@ export default function HistoryScreen() {
       <View className="w-full mb-2">
         <Pressable
           onPress={() => setExpandedTxId(isExpanded ? null : item.tx_id)}
-          className={`flex-row justify-between items-center w-full bg-custom_complement rounded-lg border-2 border-custom_border ${isExpanded ? 'border-b-0 rounded-b-none' : ''
-            } p-3 md:p-4`}
+          className={`flex-row justify-between items-center w-full bg-custom_complement rounded-lg border-2 border-custom_border ${
+            isExpanded ? 'border-b-0 rounded-b-none' : ''
+          } p-3 md:p-4`}
         >
           <View className="flex-row items-center">
             <IconComponent
@@ -202,9 +207,7 @@ export default function HistoryScreen() {
               strokeWidth={1.5}
             />
             <View className="ml-2">
-              <TextWithFont customStyle={`text-white text-sm md:text-base`}>
-                {label}
-              </TextWithFont>
+              <TextWithFont customStyle={`text-white text-sm md:text-base`}>{label}</TextWithFont>
               <TextWithFont customStyle={`text-gray-400 text-xs md:text-sm`}>
                 {getTransactionDetails(item).subLabel}
               </TextWithFont>
@@ -215,8 +218,9 @@ export default function HistoryScreen() {
               {item.amount}
             </TextWithFont>
             <TextWithFont
-              customStyle={`text-xs md:text-sm ${item.tx_status === 'success' ? 'text-green-500' : 'text-yellow-500'
-                }`}
+              customStyle={`text-xs md:text-sm ${
+                item.tx_status === 'success' ? 'text-green-500' : 'text-yellow-500'
+              }`}
             >
               {item.tx_status}
             </TextWithFont>
@@ -258,10 +262,7 @@ export default function HistoryScreen() {
             onPress={refreshTransactions}
             className={`rounded-full w-5 h-5 md:w-[25px] md:h-[25px]`}
           >
-            <RefreshCw
-              color="#FF4800"
-              className="mb-2 w-5 h-5 md:w-[25px] md:h-[25px]"
-            />
+            <RefreshCw color="#FF4800" className="mb-2 w-5 h-5 md:w-[25px] md:h-[25px]" />
           </Pressable>
         </View>
         {isLoadingWalletData || isLoadingTransactions ? (
@@ -274,10 +275,7 @@ export default function HistoryScreen() {
             <TextWithFont customStyle="text-red-500 text-center">
               {errorWalletData || errorTransactions}
             </TextWithFont>
-            <Pressable
-              onPress={refreshTransactions}
-              className={`mt-4 rounded-lg p-1.5 md:p-2`}
-            >
+            <Pressable onPress={refreshTransactions} className={`mt-4 rounded-lg p-1.5 md:p-2`}>
               <TextWithFont customStyle="text-white">Retry</TextWithFont>
             </Pressable>
           </View>

@@ -38,14 +38,10 @@ export function CreateWalletScreen() {
     <Wrapper>
       <View className="flex-col items-center">
         <View>
-          <TextWithFont
-            customStyle={`text-xl md:text-3xl font-bold text-white text-center`}
-          >
+          <TextWithFont customStyle={`text-xl md:text-3xl font-bold text-white text-center`}>
             Store your secret phrase
           </TextWithFont>
-          <TextWithFont
-            customStyle={`text-white text-sm md:text-base text-center m-1 md:m-2`}
-          >
+          <TextWithFont customStyle={`text-white text-sm md:text-base text-center m-1 md:m-2`}>
             This is your secret phrase, make
           </TextWithFont>
           <TextWithFont customStyle={`text-white text-sm md:text-base text-center`}>
@@ -59,10 +55,7 @@ export function CreateWalletScreen() {
             }}
             className="flex-1 mt-10"
           >
-            <Image
-              source={require('../../../../assets/icons/blur.png')}
-              className={`md:h-auto`}
-            />
+            <Image source={require('../../../../assets/icons/blur.png')} className={`md:h-auto`} />
           </Pressable>
         ) : (
           <MnemonicDisplay mnemonic={mnemonic} className={isHidden ? '' : ''} />
@@ -94,9 +87,7 @@ export function CreateWalletScreen() {
         )}
         {isHidden && <Button onPress={() => navigation.goBack()} text={'Go back'} accent={false} />}
         {!isHidden && (
-          <View
-            className={`flex-row bg-custom_border rounded-xl justify-center md:p-1 md:my-5`}
-          >
+          <View className={`flex-row bg-custom_border rounded-xl justify-center md:p-1 md:my-5`}>
             <Button onPress={() => navigation.goBack()} text={'Back'} customStyle={'w-[50%]'} />
             <Button
               onPress={handleNext}
@@ -121,10 +112,11 @@ export function Toggle({ isToggled, setIsToggled }: ToggleType) {
   return (
     <Pressable
       onPress={() => setIsToggled(!isToggled)}
-      className={`rounded-full flex-row items-center border-2 w-16 h-7 md:w-20 md:h-9 ${isToggled
-        ? 'bg-custom_accent border-custom_border justify-end'
-        : 'bg-custom_border border-custom_accent justify-start'
-        }`}
+      className={`rounded-full flex-row items-center border-2 w-16 h-7 md:w-20 md:h-9 ${
+        isToggled
+          ? 'bg-custom_accent border-custom_border justify-end'
+          : 'bg-custom_border border-custom_accent justify-start'
+      }`}
     >
       <View
         className={`rounded-full mx-1 h-5 w-5 md:h-6 md:w-6 ${isToggled ? 'bg-custom_border' : 'bg-custom_accent'}`}

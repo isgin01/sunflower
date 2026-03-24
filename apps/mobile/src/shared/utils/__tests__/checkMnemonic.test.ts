@@ -38,25 +38,25 @@ describe('invalid length cases', () => {
 
 describe('invalid mnemonic word', () => {
   it('not a word', () => {
-    let mnemonic = new Array(11).fill('word');
+    const mnemonic = new Array(11).fill('word');
     mnemonic.push('dskfjdfi');
     expect(() => checkMnemonic(mnemonic, 12)).toThrow(/unpermitted words/);
   });
 
   it('word not used for mnemonics', () => {
-    let mnemonic = new Array(11).fill('word');
+    const mnemonic = new Array(11).fill('word');
     mnemonic.push('russia');
     expect(() => checkMnemonic(mnemonic, 12)).toThrow(/unpermitted words/);
   });
 
   it('word with characters other than latin', () => {
-    let mnemonic = new Array(11).fill('word');
+    const mnemonic = new Array(11).fill('word');
     mnemonic.push('дурак');
     expect(() => checkMnemonic(mnemonic, 12)).toThrow(/unpermitted words/);
   });
 
   it('letters with accents', () => {
-    let mnemonic = new Array(11).fill('word');
+    const mnemonic = new Array(11).fill('word');
     mnemonic.push('wûrd');
     expect(() => checkMnemonic(mnemonic, 12)).toThrow(/unpermitted words/);
   });
@@ -70,16 +70,16 @@ describe('miscellaneous', () => {
   });
 
   it('characters other than letters sticked to words', () => {
-    for (let char of '!,.2_/') {
-      let mnemonic = new Array(11).fill('word');
+    for (const char of '!,.2_/') {
+      const mnemonic = new Array(11).fill('word');
       mnemonic.push(`word ${char}`);
       expect(() => checkMnemonic(mnemonic, 12)).toThrow(/unpermitted words/);
     }
   });
 
   it('characters other than letters on their own', () => {
-    for (let char of '!,.2_/') {
-      let mnemonic = new Array(11).fill('word');
+    for (const char of '!,.2_/') {
+      const mnemonic = new Array(11).fill('word');
       mnemonic[11] = char;
       expect(() => checkMnemonic(mnemonic, 12)).toThrow(/unpermitted words/);
     }

@@ -159,7 +159,9 @@ export default function SendInfoScreen() {
             You'll send
           </TextWithFont>
           <Coin token={transactionToken} inMainScreen={false} />
-          <TextWithFont customStyle="text-white text-lg md:text-2xl mt-4 font-normal">To:</TextWithFont>
+          <TextWithFont customStyle="text-white text-lg md:text-2xl mt-4 font-normal">
+            To:
+          </TextWithFont>
           <View className="mt-4 flex-row items-center justify-start w-[80%]">
             <CircleUser className="w-[30px] h-[30px] md:w-[35px] md:h-[35px]" />
             <TextWithFont customStyle={`text-white pl-4 text-base md:text-lg`}>
@@ -224,9 +226,7 @@ export default function SendInfoScreen() {
         {txState === 'failed' && error && (
           <View className="flex-1 items-center justify-center py-10">
             <TextWithFont customStyle={`text-red-400 text-lg md:text-2xl mb-4`}>Error</TextWithFont>
-            <TextWithFont
-              customStyle={`text-gray-400 text-sm md:text-base text-center px-4`}
-            >
+            <TextWithFont customStyle={`text-gray-400 text-sm md:text-base text-center px-4`}>
               {error}
             </TextWithFont>
             <Button text="Retry" onPress={handleSend} customStyle="mt-6" />

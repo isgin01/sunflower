@@ -79,7 +79,9 @@ export function SelectWallet({ selectedWallet, walletList, onSelect }: SelectWal
               className="bg-gray-600 rounded-lg mt-2 p-2"
               onPress={() => setIsModalVisible(false)}
             >
-              <TextWithFont customStyle="text-white text-center text-base md:text-lg">Close</TextWithFont>
+              <TextWithFont customStyle="text-white text-center text-base md:text-lg">
+                Close
+              </TextWithFont>
             </Pressable>
           </View>
         </View>

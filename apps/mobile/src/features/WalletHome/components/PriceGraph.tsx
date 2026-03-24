@@ -1,6 +1,5 @@
-import { useWindowDimensions, View } from 'react-native';
+import { View, useWindowDimensions } from 'react-native';
 import { LineChart } from 'react-native-gifted-charts';
-
 
 type PriceGraphType = {
   lineData?: { value: number }[];
@@ -9,8 +8,6 @@ type PriceGraphType = {
 export default function PriceGraph({ lineData }: PriceGraphType) {
   const { height } = useWindowDimensions();
   const chartHeight = height >= 800 ? 150 : 100;
-
-
 
   return (
     <View className="bg-custom_complement rounded-xl p-0 mb-1">
