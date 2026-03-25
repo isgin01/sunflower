@@ -6,7 +6,7 @@
   "scripts": {
     "start:android": "pnpm --filter sunflower-mobile run start",
     "build:android": "pnpm --filter sunflower-mobile run android",
-    "test:mobile": "pnpm --filter sunflower-mobile run test -c apps/mobile/jest.config.js",
+    "test:mobile": "pnpm --filter sunflower-mobile run test",
     "prepare": "husky",
     "lint": "pnpm dlx eslint . --fix",
     "format": "pnpm dlx prettier -w .",

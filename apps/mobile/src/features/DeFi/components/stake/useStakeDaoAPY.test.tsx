@@ -16,4 +16,4 @@ const createWrapper = () => {
 };
 
 // TODO: it is unclear if APY must be handled the way it is done
-it.todo('stack dao apy');
+it.todo('stake dao apy');
