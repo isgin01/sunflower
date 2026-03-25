@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`MnemonicInput snapshot 1`] = `
+exports[`snapshot 1`] = `
 <View
   className="flex-row w-full items-center rounded-lg bg-custom_border px-1 p-1.5 my-0.5 md:px-2 md:p-2 md:my-1"
 >

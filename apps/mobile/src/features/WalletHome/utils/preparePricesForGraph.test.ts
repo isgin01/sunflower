@@ -1,3 +1,3 @@
 import preparePricesForGraph from './preparePricesForGraph';
 
-it('regular case', () => {});
+it.todo('regular case');
